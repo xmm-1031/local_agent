@@ -22,14 +22,18 @@
 
 该项目使用 Python 开发，建议使用虚拟环境来管理依赖，避免与系统环境发生冲突。
 创建虚拟环境
+
 python -m venv .venv
 
 激活虚拟环境
+
 Windows：.\.venv\Scripts\activate
+
 Mac/Linux：source .venv/bin/activate
 
 安装依赖
 运行以下命令安装项目的所有依赖：
+
 pip install -r requirements.txt
 
 ### 3.2 安装必要的软件包
@@ -83,5 +87,6 @@ ChromaDB：作为向量数据库，用于存储论文和图像的向量，支持
 PyMuPDF (fitz)：用于从 PDF 中提取文本，支持多种文本提取模式。
 
 ## 5.结语
+
 
 该项目结合了自然语言处理、图像识别和向量数据库等技术，旨在实现更加智能和高效的文献与图像管理。通过该系统，用户可以快速对文献进行分类、检索，并且能够通过自然语言描述进行图像搜索。
