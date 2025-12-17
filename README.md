@@ -60,6 +60,7 @@ pip install fitz sentence-transformers chromadb transformers
 
 ### 4.2 向系统添加论文
 通过命令行添加单个 PDF 文件，系统会根据文本内容自动分类并移动到对应子文件夹。
+
 python main.py add_paper <paper_path> --topics "3DGS,sparse view,network"
 
 <paper_path>：论文文件的路径。
