@@ -65,6 +65,8 @@ for %f in ("E:\local_agent\library\papers_raw\*.pdf") do python main.py add_pape
 
 这条命令会批量处理 E:\local_agent\library\papers_raw\ 中的所有 PDF 文件，将它们按照指定的主题进行分类并移动到相应的子文件夹。
 
+[![Demo Video](docs/demo_cover.png)](docs/add_mutil_papers.mp4)
+
 ### 4.3 向系统添加论文
 通过命令行添加单个 PDF 文件，系统会根据文本内容自动分类并移动到对应子文件夹。
 
@@ -74,6 +76,7 @@ python main.py add_paper <paper_path> --topics "3D editing,sparse view,network"
 
 --topics：一个或多个主题，用逗号分隔（如 "3D editing,sparse view,network"）。
 
+[![Demo Video](docs/demo_cover.png)](docs/add_one_papers.mp4)
 
 ### 4.4 语义搜索文献
 通过自然语言查询，系统可以基于论文内容返回最相关的文献，并显示相关片段和页码。
@@ -84,10 +87,14 @@ python main.py search_paper "3DGS的原理是什么？" --top_k 3 --show_snippet
 
 --show_snippet：显示相关文献的片段。
 
+[![Demo Video](docs/demo_cover.png)](docs/search_paper.mp4)
+
 ### 4.5 以文搜图
 通过自然语言描述，查询本地图像库中的最匹配图片：
 python main.py search_image "画画的小孩" --top_k 3
 --top_k：返回最相关的前 K 张图片。
+
+[![Demo Video](docs/demo_cover.png)](docs/search_image.mp4)
 
 ### 4.6 技术选型说明                                    
 1. 模型
@@ -101,10 +108,6 @@ ChromaDB：作为向量数据库，用于存储论文和图像的向量，支持
 PyMuPDF (fitz)：用于从 PDF 中提取文本，支持多种文本提取模式。
 
 
-## 5.Demo
-
-[![Demo Video](docs/demo_cover.png)](docs/demo.mp4)
-
-## 6.结语
+## 5.结语
 
 该项目结合了自然语言处理、图像识别和向量数据库等技术，旨在实现更加智能和高效的文献与图像管理。通过该系统，用户可以快速对文献进行分类、检索，并且能够通过自然语言描述进行图像搜索。
