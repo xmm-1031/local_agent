@@ -39,10 +39,15 @@ pip install -r requirements.txt
 ### 3.2 安装必要的软件包
 
 PyMuPDF：用于从 PDF 中提取文
+
 Sentence-Transformers：用于将文本转换为向量并进行语义搜索
+
 ChromaDB：用于存储和查询向量数据库
+
 Hugging Face Transformers：用于加载并使用预训练模型（如 CLIP）
+
 你可以使用以下命令安装依赖：
+
 pip install fitz sentence-transformers chromadb transformers
 
 ### 3.3 其他依赖
@@ -56,18 +61,25 @@ pip install fitz sentence-transformers chromadb transformers
 ### 4.2 向系统添加论文
 通过命令行添加单个 PDF 文件，系统会根据文本内容自动分类并移动到对应子文件夹。
 python main.py add_paper <paper_path> --topics "3DGS,sparse view,network"
+
 <paper_path>：论文文件的路径。
+
 --topics：一个或多个主题，用逗号分隔（如 "3DGS,sparse view,network"）。
 
 ### 4.3 批量整理文件夹中的论文
 要整理文件夹中的所有 PDF 论文，并将它们根据主题进行分类，可以使用以下命令：
+
 for %f in ("E:\local_agent\library\papers_raw\*.pdf") do python main.py add_paper "%f" --topics "3DGS,sparse view,network"
+
 这条命令会批量处理 E:\local_agent\library\papers_raw\ 中的所有 PDF 文件，将它们按照指定的主题进行分类并移动到相应的子文件夹。
 
 ### 4.4 语义搜索文献
 通过自然语言查询，系统可以基于论文内容返回最相关的文献，并显示相关片段和页码。
+
 python main.py search_paper "3DGS的原理是什么？" --top_k 5 --show_snippet
+
 --top_k：返回最相关的前 K 条结果。
+
 --show_snippet：显示相关文献的片段。
 
 ### 4.5 以文搜图
@@ -87,6 +99,5 @@ ChromaDB：作为向量数据库，用于存储论文和图像的向量，支持
 PyMuPDF (fitz)：用于从 PDF 中提取文本，支持多种文本提取模式。
 
 ## 5.结语
-
 
 该项目结合了自然语言处理、图像识别和向量数据库等技术，旨在实现更加智能和高效的文献与图像管理。通过该系统，用户可以快速对文献进行分类、检索，并且能够通过自然语言描述进行图像搜索。
